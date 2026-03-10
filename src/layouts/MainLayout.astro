@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+const { tenant } = Astro.locals;
+const { title } = Astro.props;
+
+// Mapping des thèmes DB → thèmes DaisyUI
+const themeMap: Record<string, string> = {
+  'luxury': 'luxury',
+  'minimal': 'light',
+  'executive': 'business'
+};
+const tenantTheme = (tenant.theme as string) || 'minimal';
+const theme = themeMap[tenantTheme] || 'light';
+---
+
+<!DOCTYPE html>
+<html lang="fr" data-theme={theme}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title} | {tenant.name}</title>
+	</head>
+	<body>
+		<nav>
+			<h1>{tenant.name}</h1>
+		</nav>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

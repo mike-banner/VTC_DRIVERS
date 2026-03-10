@@ -1,0 +1,19 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  /* Configuration des thèmes pour tes chauffeurs */
+  themes: light, dark, luxury, business;
+}
+
+@theme {
+  /* On peut ajouter des extensions de thème ici si besoin */
+}
+
+/* Reset de base pour Astro */
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}

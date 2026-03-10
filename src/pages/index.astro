@@ -1,0 +1,12 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const { tenant } = Astro.locals;
+---
+<MainLayout title="Réservez votre chauffeur">
+	<section class="hero">
+		<h2>Bienvenue chez {tenant.name}</h2>
+		<p>Service de transport privé de haute qualité.</p>
+		<a href="/booking" class="btn btn-primary">Réserver maintenant</a>
+
+	</section>
+</MainLayout>
