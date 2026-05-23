@@ -13,6 +13,7 @@ Spécifications d'intégration et d'isolation des bases de données.
 
 - **Fichier Source** : `src/core/tenant.ts`
 - **Fonctionnement** : La fonction `resolveTenant(host)` interroge la table `tenants` sur la colonne `primary_domain`.
+- **Stratégie à Grande Échelle** : Se référer à l' [ADR 0002](file:///home/mike/projects/vtc/vtc-drivers/docs/adr/0002-resolution-domaine-multi-tenant.md) pour les détails opérationnels sans domaine en dev/preview et le passage à 10 000+ sites.
 - **Règle d'Isolation** :
   - Tous les composants Astro récupèrent les données filtrées par l'identifiant du tenant résolu (`tenant_id`).
   - **Exemple de filtre obligatoire** :

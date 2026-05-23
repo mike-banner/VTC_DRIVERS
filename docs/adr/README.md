@@ -28,6 +28,7 @@ Chaque nouvel ADR doit être consigné dans ce dossier sous la forme `XXXX-titre
 | ID | Titre | Statut | Date |
 | :--- | :--- | :--- | :--- |
 | `0001` | Isolation des tunnels et calculs côté Backoffice | **Accepté** | 2026-05-22 |
+| `0002` | Résolution de Domaine Multi-Tenant Dynamique à Grande Échelle | **Proposé** | 2026-05-23 |
 
 ---
 
