@@ -7,6 +7,8 @@ interface Tenant {
   theme: "luxury" | "minimal" | "executive";
   stripe_account_id?: string;
   platform_fee_rate: number;
+  email?: string;
+  phone?: string;
   created_at: string;
 }
 
