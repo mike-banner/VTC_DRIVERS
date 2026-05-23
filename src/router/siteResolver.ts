@@ -18,5 +18,5 @@ export function resolveSite(host: string): string {
     return import.meta.env.PUBLIC_SITE || "elite-lyon";
   }
 
-  return map[host] || "demo"; // demo ou elite-lyon comme fallback
+  return map[host] || "elite-lyon"; // elite-lyon comme fallback par défaut en construction
 }
