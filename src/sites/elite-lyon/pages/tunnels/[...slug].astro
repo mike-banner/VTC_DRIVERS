@@ -9,9 +9,13 @@ export const partial = false;
 const { slug, path } = Astro.params;
 const currentSlug = slug || (path?.startsWith('tunnels/') ? path.replace('tunnels/', '') : '');
 
+// Rediriger l'ancienne route 'airport' vers 'transfert'
+if (currentSlug === 'airport') {
+  return Astro.redirect('/tunnels/transfert');
+}
+
 // Normaliser le slug pour correspondre aux clés de serviceConfigs
 const slugMap: Record<string, string> = {
-  airport: 'airport',
   transfert: 'transfert',
   'long-distance': 'longDistance',
   business: 'business',
@@ -28,7 +32,6 @@ if (!normalizedSlug) {
 
 // Composants disponibles (mapping dynamique)
 const tunnelComponents: Record<string, () => Promise<{ default: any }>> = {
-  airport: () => import('../../../../components/tunnels/AirportTunnel.astro'),
   transfert: () => import('../../../../components/tunnels/AirportTunnel.astro'),
   longDistance: () => import('../../../../components/tunnels/LongDistanceTunnel.astro'),
   business: () => import('../../../../components/tunnels/BusinessTunnel.astro'),
@@ -54,11 +57,6 @@ const TunnelComponent = TunnelResult.default;
 
 // Métadonnées SEO par tunnel
 const seoConfigs = {
-  airport: {
-    title: 'Transfert Aéroport - Elite Lyon VTC',
-    description:
-      'Réservez votre transfert aéroport en ligne. Service premium vers CDG, Orly, Lyon Saint-Exupéry.',
-  },
   transfert: {
     title: 'Transfert Privé - Elite Lyon VTC',
     description:
@@ -81,7 +79,7 @@ const seoConfigs = {
   },
 };
 
-const seo = seoConfigs[normalizedSlug as keyof typeof seoConfigs] || seoConfigs.airport;
+const seo = seoConfigs[normalizedSlug as keyof typeof seoConfigs] || seoConfigs.transfert;
 ---
 
 <BaseLayout title={seo.title} description={seo.description} minimal={true}>

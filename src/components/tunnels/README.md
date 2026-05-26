@@ -15,15 +15,15 @@
 
 ### 3. Tunnels Spécifiques
 
-#### A. Transfert Aéroport (`AirportTunnel.astro`)
+#### A. Transfert (`AirportTunnel.astro`)
 **Étapes :**
-1. Sélection aéroport (CDG, ORY, LYS, GVA, MRS, NCE)
+1. Sélection de la destination / gare / aéroport (CDG, ORY, LYS, GVA, etc.)
 2. Type de véhicule (Berline, Business, Van)
-3. Date/Heure + Suivi de vol
+3. Date/Heure
 4. Adresses de départ/arrivée
 
 **Fonctionnalités :**
-- Suivi de vol automatique
+- Sélection dynamique des gares, aéroports et destinations prédéfinies
 - Estimation de distance/temps
 - Prix selon véhicule
 
@@ -66,7 +66,7 @@
 ## URLs des Tunnels
 
 ```
-/tunnels/airport          # Transfert Aéroport
+/tunnels/transfert        # Transfert (prédéfinis, gares, aéroports)
 /tunnels/long-distance    # Longue Distance
 /tunnels/business         # Business & B2B
 /tunnels/availability     # Mise à Disposition
@@ -76,7 +76,7 @@
 
 Les 4 tunnels correspondent aux 4 services de la section "Nos Prestations" :
 
-1. **Transferts Aéroport** → `/tunnels/airport`
+1. **Transferts** → `/tunnels/transfert`
 2. **Longue Distance** → `/tunnels/long-distance`
 3. **Business & B2B** → `/tunnels/business`
 4. **Mise à Disposition** → `/tunnels/availability`
