@@ -60,7 +60,7 @@ const config = {
 <div class='min-h-screen bg-gradient-to-b from-zinc-50 to-white overflow-x-hidden relative'>
   <!-- Header avec progression -->
   <header class='fixed top-0 left-0 right-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-200'>
-    <div class='container mx-auto px-6 py-4'>
+    <div class='container mx-auto px-6 py-3 md:py-4'>
       <div class='flex items-center justify-between'>
         <a href='/' class='text-xl font-bold text-zinc-900'>
           {tenant.name}
@@ -77,14 +77,14 @@ const config = {
       </div>
 
       <!-- Barre de progression -->
-      <div class='mt-6'>
+      <div class='mt-4 md:mt-6'>
         <TunnelProgress currentStep={currentStep} totalSteps={totalSteps} />
       </div>
     </div>
   </header>
 
   <!-- Contenu principal -->
-  <main class='container mx-auto px-6 pt-32 pb-12'>
+  <main class='container mx-auto px-6 pt-36 md:pt-40 pb-12'>
     <slot />
   </main>
 
