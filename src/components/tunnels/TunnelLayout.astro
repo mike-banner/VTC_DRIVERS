@@ -13,7 +13,7 @@ const {
   accentColor = '#000000',
 } = Astro.props;
 
-const { tenant } = Astro.locals;
+const tenant = Astro.locals.tenant || { name: 'Elite Lyon', id: 'default' };
 
 // Fallback configs si les props ne sont pas fournies
 const defaultConfigs = {
