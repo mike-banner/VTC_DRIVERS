@@ -1,73 +1,78 @@
-/* src/sites/elite-lyon/styles/theme.css */
+﻿/* src/sites/elite-lyon/styles/theme.css */
 @import 'tailwindcss';
 
 @plugin "daisyui" {
+  themes: ["dark"];
+}
+
+[data-theme="dark"] {
+  --color-base-100: #0B0F15;
+  --color-base-200: #151A24;
+  --color-base-300: #151F2B;
+  --color-base-content: #F6F7F8;
+  --color-primary: #6185B2;
+  --color-primary-content: #ffffff;
+  --color-secondary: #151F2B;
+  --color-secondary-content: #F6F7F8;
+  --color-accent: #719DCC;
+  --color-accent-content: #ffffff;
+  --color-neutral: #1e2a38;
+  --color-neutral-content: #F6F7F8;
 }
 
 @theme {
-  /* Commence.fr Luxury Palette */
-  --color-primary: #050505; /* Deep Obsidian */
-  --color-primary-content: #ffffff;
+  --color-surface: #0B0F15;
+  --color-on-surface: #F6F7F8;
+  --color-on-surface-variant: #A8C0E0;
+  --color-surface-container-low: #151A24;
+  --color-surface-container: #151F2B;
+  --color-border: #54749B;
+  --color-elite-accent: #6185B2;
 
-  --color-elite-accent: #6185b2; /* Safe unique brand token */
-  --color-steel-blue: #6185b2;
-  --color-accent: #006d2f; /* Emerald Green for Buttons KEPT */
-
-  --color-surface: #ffffff;
-  --color-on-surface: #050505;
-  --color-on-surface-variant: #666666;
-
-  --color-surface-container-low: #f8f8f8;
-
-  /* Typography */
-  --font-headline: 'Manrope', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-label: 'Plus Jakarta Sans', sans-serif;
-
-  /* Spacing & Radius */
-  --radius-sm: 0rem; /* Sharp edges for luxury */
-  --radius-md: 0.125rem;
-  --radius-lg: 0.25rem;
-  --radius-xl: 0.5rem;
+  --font-headline: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-label: 'Poppins', sans-serif;
 }
 
 @layer utilities {
   .glass-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(21, 31, 43, 0.9);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(97, 133, 178, 0.2); /* Subtle Blue border */
+    border: 1px solid rgba(97, 133, 178, 0.2);
   }
 
   .text-luxe-label {
     font-family: var(--font-label);
-    font-weight: 800;
-    letter-spacing: 0.2em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-secondary);
+    color: var(--color-on-surface-variant);
   }
 
   .btn-premium {
-    background: #006d2f;
+    background: #6185B2;
     color: white;
     font-weight: 700;
     transition: all 0.3s ease;
   }
+
+  .btn-premium:hover {
+    background: #446598;
+    box-shadow: 0 10px 30px -10px rgba(97, 133, 178, 0.5);
+  }
+
+  .shadow-accent {
+    box-shadow: 0 10px 30px -10px rgba(97, 133, 178, 0.5);
+  }
 }
 
-html,
-body {
-  background-color: var(--color-surface);
-  color: var(--color-on-surface);
+html, body {
+  background-color: #0B0F15;
+  color: #F6F7F8;
+  font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Force override for any remaining 'secondary' classes hijacked by libraries */
-.text-secondary {
-  color: #6185b2 !important;
-}
-.border-secondary {
-  border-color: #6185b2 !important;
-}
-.bg-secondary {
-  background-color: #6185b2 !important;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
 }

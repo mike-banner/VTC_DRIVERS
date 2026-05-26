@@ -10,37 +10,37 @@ const { image = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=
   Astro.props;
 ---
 
-<div class='flex flex-col md:flex-row gap-24 items-center font-sans'>
-  <div class='md:w-1/2'>
+<div class='flex flex-col md:flex-row gap-24 items-center'>
+  <div class='md:w-1/2 flex flex-col items-center text-center md:text-left md:items-start'>
     <span class='text-elite-accent font-label font-bold tracking-[0.3em] uppercase text-[10px]'
       >Lifestyle Concept</span
     >
     <h2
-      class='text-black font-headline text-4xl md:text-6xl font-extrabold uppercase mt-4 tracking-tighter'>
+      class='text-white font-headline text-4xl md:text-6xl font-extrabold uppercase mt-4 tracking-tighter'>
       Conciergerie<br />Hautes Etudes
     </h2>
-    <p class='mt-8 text-black/50 text-base leading-relaxed max-w-lg'>
-      Une assistance proactive pour vos réservations, la gestion de vos bagages et l’anticipation de
-      chacun de vos besoins opérationnels.
+    <p class='mt-8 text-white/50 text-base leading-relaxed max-w-lg mx-auto md:mx-0'>
+      Une assistance proactive pour vos reservations, la gestion de vos bagages et l'anticipation de
+      chacun de vos besoins operationnels.
     </p>
-    <div class='mt-12 grid grid-cols-2 gap-8'>
-      <div class='border-l border-elite-accent/20 pl-4'>
+    <div class='mt-12 grid grid-cols-2 gap-8 w-full'>
+      <div class='border-l-0 md:border-l border-elite-accent/40 pl-0 md:pl-4 text-center md:text-left'>
         <span
           class='text-[9px] font-label uppercase tracking-widest text-elite-accent font-bold block mb-1'
           >Service</span
         >
-        <p class='text-black font-bold text-sm uppercase'>Gastronomie</p>
+        <p class='text-white font-bold text-sm uppercase'>Gastronomie</p>
       </div>
-      <div class='border-l border-elite-accent/20 pl-4'>
+      <div class='border-l-0 md:border-l border-elite-accent/40 pl-0 md:pl-4 text-center md:text-left'>
         <span
           class='text-[9px] font-label uppercase tracking-widest text-elite-accent font-bold block mb-1'
           >Service</span
         >
-        <p class='text-black font-bold text-sm uppercase'>Hôtellerie</p>
+        <p class='text-white font-bold text-sm uppercase'>Hotellerie</p>
       </div>
     </div>
   </div>
-  <div class='md:w-1/2 relative'>
+  <div class='md:w-1/2 relative w-full'>
     <div class='absolute inset-0 bg-elite-accent/5 translate-x-4 translate-y-4'></div>
     {
       typeof image === 'string' ? (
