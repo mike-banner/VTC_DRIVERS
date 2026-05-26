@@ -30,29 +30,45 @@ const vehicleTypes = [
   { type: 'van', name: 'Van VIP', seats: 6, price: 'À partir de 150€', icon: 'ri:bus-2-line' },
 ];
 
-const { ...props } = Astro.props;
+const { serviceType = 'airport', ...props } = Astro.props;
+const isGeneralTransfer = serviceType === 'transfert';
+
+const destinations = isGeneralTransfer
+  ? [
+      { code: 'LYS', name: 'Aéroport Lyon Saint-Exupéry', distance: '30min' },
+      { code: 'PART-DIEU', name: 'Gare Lyon Part-Dieu', distance: '15min' },
+      { code: 'PERRACHE', name: 'Gare Lyon Perrache', distance: '10min' },
+      { code: 'GVA', name: 'Aéroport de Genève', distance: '2h' },
+      { code: 'COURCHEVEL', name: 'Station Courchevel / Alpes', distance: '2h15' },
+      { code: 'CDG', name: 'Aéroport Paris CDG', distance: '4h30' },
+    ]
+  : airports;
 ---
 
-<TunnelLayout currentStep={1} totalSteps={4} serviceType='airport' {...props}>
+<TunnelLayout currentStep={1} totalSteps={4} serviceType={serviceType} {...props}>
   <form id='tunnel-form' class='max-w-4xl mx-auto'>
-    <!-- Étape 1: Sélection aéroport -->
+    <!-- Étape 1: Sélection transfert/aéroport -->
     <div class='mb-12'>
-      <h2 class='text-2xl font-bold text-zinc-900 mb-2'>Sélectionnez votre aéroport</h2>
-      <p class='text-zinc-600 mb-8'>Choisissez votre aéroport de départ ou d'arrivée</p>
+      <h2 class='text-2xl font-bold text-zinc-900 mb-2'>
+        {isGeneralTransfer ? 'Sélectionnez votre transfert' : 'Sélectionnez votre aéroport'}
+      </h2>
+      <p class='text-zinc-600 mb-8'>
+        {isGeneralTransfer ? 'Choisissez votre transfert de départ ou d\'arrivée' : 'Choisissez votre aéroport de départ ou d\'arrivée'}
+      </p>
 
       <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {
-          airports.map((airport) => (
+          destinations.map((dest) => (
             <label class='relative group cursor-pointer'>
-              <input type='radio' name='airport' value={airport.code} class='sr-only peer' />
+              <input type='radio' name='airport' value={dest.code} class='sr-only peer' />
               <div class='p-6 border-2 border-zinc-200 rounded-xl hover:border-accent transition-all duration-300 peer-checked:border-accent peer-checked:bg-accent/5'>
                 <div class='flex items-start justify-between mb-4'>
                   <div>
-                    <div class='text-lg font-semibold text-zinc-900'>{airport.code}</div>
-                    <div class='text-sm text-zinc-600 mt-1'>{airport.name}</div>
+                    <div class='text-lg font-semibold text-zinc-900'>{dest.code}</div>
+                    <div class='text-sm text-zinc-600 mt-1'>{dest.name}</div>
                   </div>
                   <div class='text-xs font-medium text-accent bg-accent/10 px-2 py-1 rounded'>
-                    {airport.distance}
+                    {dest.distance}
                   </div>
                 </div>
                 <div class='flex items-center gap-2 text-sm text-zinc-500'>

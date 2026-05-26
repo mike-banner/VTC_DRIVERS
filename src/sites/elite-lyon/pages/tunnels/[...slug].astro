@@ -12,6 +12,7 @@ const currentSlug = slug || (path?.startsWith('tunnels/') ? path.replace('tunnel
 // Normaliser le slug pour correspondre aux clés de serviceConfigs
 const slugMap: Record<string, string> = {
   airport: 'airport',
+  transfert: 'transfert',
   'long-distance': 'longDistance',
   business: 'business',
   availability: 'availability',
@@ -28,6 +29,7 @@ if (!normalizedSlug) {
 // Composants disponibles (mapping dynamique)
 const tunnelComponents: Record<string, () => Promise<{ default: any }>> = {
   airport: () => import('../../../../components/tunnels/AirportTunnel.astro'),
+  transfert: () => import('../../../../components/tunnels/AirportTunnel.astro'),
   longDistance: () => import('../../../../components/tunnels/LongDistanceTunnel.astro'),
   business: () => import('../../../../components/tunnels/BusinessTunnel.astro'),
   availability: () => import('../../../../components/tunnels/AvailabilityTunnel.astro'),
@@ -56,6 +58,11 @@ const seoConfigs = {
     title: 'Transfert Aéroport - Elite Lyon VTC',
     description:
       'Réservez votre transfert aéroport en ligne. Service premium vers CDG, Orly, Lyon Saint-Exupéry.',
+  },
+  transfert: {
+    title: 'Transfert Privé - Elite Lyon VTC',
+    description:
+      'Réservez votre transfert privé en ligne. Trajets sur-mesure vers toutes destinations et gares.',
   },
   longDistance: {
     title: 'Longue Distance - Elite Lyon VTC',
