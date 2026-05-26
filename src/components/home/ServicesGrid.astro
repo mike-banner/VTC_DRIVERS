@@ -1,4 +1,4 @@
-﻿---
+---
 // src/components/home/ServicesGrid.astro
 import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
@@ -60,19 +60,19 @@ const services: Service[] = [
             alt={s.title}
             width={800}
             height={400}
-            class="w-full h-full object-cover transition-all duration-700 brightness-75 group-hover:brightness-50 group-hover:scale-105"
+            class="w-full h-full object-cover transition-all duration-700 brightness-75 lg:group-hover:brightness-50 lg:group-hover:scale-105"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
-          <div class="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-             <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-elite-accent mb-2 opacity-0 group-hover:opacity-100 transition-opacity">Signature</span>
+          <div class="absolute inset-0 p-8 flex flex-col justify-end lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500">
+             <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-elite-accent mb-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">Signature</span>
              <h4 class="text-xl font-semibold text-white tracking-tight mb-2">{s.title}</h4>
-             <p class="text-white/70 text-xs font-normal leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+             <p class="text-white/70 text-xs font-normal leading-relaxed opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                {s.desc}
              </p>
           </div>
 
-          <div class="absolute top-8 right-8 w-10 h-10 bg-[#6185B2] text-white flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-2 group-hover:translate-y-0">
+          <div class="absolute top-8 right-8 w-10 h-10 bg-[#6185B2] text-white flex items-center justify-center rounded-full opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500 translate-y-0 lg:-translate-y-2 lg:group-hover:translate-y-0">
              <Icon name="ri:arrow-right-line" class="text-lg" />
           </div>
         </a>
