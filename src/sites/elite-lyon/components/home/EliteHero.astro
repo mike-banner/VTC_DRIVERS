@@ -9,7 +9,7 @@ import EliteBookingWidget from './EliteBookingWidget.astro';
   class='relative min-h-[70vh] md:min-h-screen flex items-center pt-20 overflow-hidden bg-black'>
   <div class='absolute inset-0 z-0'>
     <Image
-      class='w-full h-full object-contain bg-black opacity-90'
+      class='w-full h-full object-contain bg-black opacity-90 scale-105 lg:scale-100'
       src={heroImage}
       alt='Elite Chauffeur City'
       loading='eager'
@@ -47,7 +47,7 @@ import EliteBookingWidget from './EliteBookingWidget.astro';
         </button>
       </div>
     </div>
-    <div id='booking' class='lg:col-span-5 flex items-center w-full mt-20 lg:mt-0'>
+    <div id='booking' class='lg:col-span-5 flex items-center w-full mt-[85px] lg:mt-0'>
       <EliteBookingWidget />
     </div>
   </div>
