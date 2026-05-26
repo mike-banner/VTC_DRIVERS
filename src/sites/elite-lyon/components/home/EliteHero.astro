@@ -6,10 +6,10 @@ import EliteBookingWidget from './EliteBookingWidget.astro';
 
 <section
   id='hero'
-  class='relative min-h-[70vh] md:min-h-screen flex items-center pt-20 overflow-hidden bg-black'>
+  class='relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-black'>
   <div class='absolute inset-0 z-0'>
     <Image
-      class='w-full h-full object-contain bg-black opacity-90'
+      class='w-full h-full object-cover opacity-90'
       src={heroImage}
       alt='Elite Chauffeur City'
       loading='eager'
@@ -22,17 +22,17 @@ import EliteBookingWidget from './EliteBookingWidget.astro';
     <div class='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent'>
     </div>
   </div>
-  <div class='container mx-auto px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12'>
+  <div class='container mx-auto px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12'>
     <div class='lg:col-span-7 flex flex-col justify-center items-center lg:items-start text-center lg:text-left'>
       <span
-        class='text-elite-accent font-label font-bold tracking-[0.3em] uppercase mb-4 text-[10px]'
+        class='text-elite-accent font-label font-bold tracking-[0.3em] uppercase mb-3 text-[10px]'
         >Premium Fleet Service</span
       >
       <h1
-        class='text-white font-headline text-5xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8 uppercase'>
+        class='text-white font-headline text-4xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-4 lg:mb-8 uppercase'>
         Chauffeur<br class="hidden lg:inline" /> <span class='text-elite-accent'>Privé</span> De Luxe
       </h1>
-      <p class='text-white/60 font-body text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-12 leading-relaxed'>
+      <p class='text-white/60 font-body text-base md:text-xl max-w-xl mx-auto lg:mx-0 mb-6 lg:mb-12 leading-relaxed'>
         L'excellence opérationnelle pour vos déplacements stratégiques. Discrétion, ponctualité et
         prestige.
       </p>
@@ -47,7 +47,7 @@ import EliteBookingWidget from './EliteBookingWidget.astro';
         </button>
       </div>
     </div>
-    <div id='booking' class='lg:col-span-5 flex items-center'>
+    <div id='booking' class='lg:col-span-5 flex items-center w-full'>
       <EliteBookingWidget />
     </div>
   </div>
