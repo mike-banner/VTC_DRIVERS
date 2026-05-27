@@ -23,6 +23,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# VS Code settings
+.vscode/
+
 # AI and Agent Orchestration files
 .agent/
 .ai_memory/
